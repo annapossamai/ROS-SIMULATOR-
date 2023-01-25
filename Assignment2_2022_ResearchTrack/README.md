@@ -36,7 +36,7 @@ In particular it is required to implement three nodes and a launch file as follo
 - (a) A node that implements an action client, allowing the user to set a target (x, y) or to cancel it. 
       The node also publishes the robot position and velocity as a custom message (x,y, vel_x, vel_z), by relying on the values published on the topic /odom. 
 - (b) A service node that, when called, prints the number of goals reached and cancelled;
-- (c) A node that subscribes to the robots position and velocity (using the custom message) and prints the distance of the robot from the target and the robots average speed. Use a parameter to set how fast the node publishes the information.
+- (c) A node that subscribes to the robots position and velocity (using the custom message) and prints the distance of the robot from the target and the robots average speed. Use a parameter to set how fast the node publishes the information.
 - Create a launch file to start the whole simulation. Set the value for the frequency with which node (C) publishes the information.
 
 
@@ -57,14 +57,14 @@ Inside the scripts directory there are six python file that represent the nodes:
     The structure of this node is described in the following flowchart:
 
 <figure>
-<img src="RT2.png" alt="FlowChart" style="width:100%">
+<img src="FlowChart.png" alt="FlowChart" style="width:100%">
 <figcaption align = "center"></figcaption>
 </figure>
 <br/>
 
 5. `service_node_B.py` implement the service node that, when it is called, prints the number of goals reached and cancelled;
 
-6. `dist_vel_C.py` is the noden that subscribes to the robots position and velocity (using the custom message) and prints on the console the distance of the robot from the target set in node action_client_A, and its average speed with the frequency set as a parameter in the launch file.
+6. `dist_vel_C.py` implement the node that subscribes to the robots position and velocity (using the custom message) and prints on the console the distance of the robot from the target set in node action_client_A, and its average speed with the frequency set as a parameter in the launch file.
 
 
 After the program launch file has been run, four windows appears:
