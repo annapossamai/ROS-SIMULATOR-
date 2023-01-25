@@ -64,7 +64,7 @@ Inside the scripts directory there are six python file that represent the nodes:
 
 5. `service_node_B.py` implement the service node that, when it is called, prints the number of goals reached and cancelled;
 
-6. `dist_vel_C.py` is the noden that subscribes to the robots position and velocity (using the custom message) and prints on the console the distance of the robot from the target set in node action_client_A, and its average speed with the frequency set as a parameter in the launch file.
+6. `dist_vel_C.py` implement the node that subscribes to the robots position and velocity (using the custom message) and prints on the console the distance of the robot from the target set in node action_client_A, and its average speed with the frequency set as a parameter in the launch file.
 
 
 After the program launch file has been run, four windows appears:
