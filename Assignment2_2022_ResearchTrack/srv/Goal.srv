@@ -1,0 +1,4 @@
+#no input request
+---
+int32 goal_reached
+int32 goal_cancelled
