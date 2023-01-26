@@ -10,7 +10,7 @@
 
     roscore
 
-- Then, clone inside the `src` folder of the ROS workspace the assignment package `assignment_2_2022` from this github.
+- Then, clone inside the `src` folder of the ROS workspace the assignment package `Assignment2_2022_ResearchTrack` from this github.
 
 - Then, from the root directory of the ROS workspace type:
 
