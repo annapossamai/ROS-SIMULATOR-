@@ -10,7 +10,7 @@
 
     roscore
 
-- In order o install the module, we need to go inside the `src` folder of our ROS workspace and clone the assignment package `assignment_2_2022` from this github.
+- Then, clone inside the `src` folder of our ROS workspace the assignment package `Assignment2_2022_ResearchTrack` from this github.
 
 - Then, from the root directory of the ROS workspace type:
 
