@@ -22,7 +22,7 @@
 
 - Finally, to run the code, type:
 
-    roslaunch assignment_2_2022 assignment1.launch
+    roslaunch Assignment2_2022_ResearchTrack assignment1.launch
 
 
 
