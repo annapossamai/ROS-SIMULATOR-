@@ -1,5 +1,27 @@
 #! /usr/bin/env python
 
+"""
+.. module:: action_client_A
+	:platform: Unix
+	:synopsis: Python module for the action client A.
+
+.. moduleauthor:: Anna Possamai
+
+This node implements an *action client node* that allows the user to *set the target* (x,y) or to cancel it by keyboard input in the console; 
+then, it publish the robot position and velocity as a custom message (pos_vel), by relying on the values publish on the topic /odom.
+
+Subscriber: 
+	/odom
+
+Publish:
+	/pos_vel
+
+Action client:
+	/reaching_goal
+
+"""
+
+
 # import ros stuff
 import rospy
 import actionlib
@@ -14,6 +36,15 @@ from assignment_2_2022.msg import Pos_vel
 
 
 def callback_pos_vel(msg):
+
+
+	"""
+	Callback function to get the position and velocity and publish them as a custom message (pos_vel).
+
+	Args:
+		msg(Pos_vel): the position and velocity of the robot
+
+	"""
 	
 	global pub
 	
@@ -36,6 +67,11 @@ def callback_pos_vel(msg):
 	pub.publish(pos_vel)
 
 def robot_client():
+
+	"""
+	This function implements the action client node that allows the user to set the target (x,y) or to cancel it.
+	
+	"""
 	
 	#Create the SimpleActionClient
 	client = actionlib.SimpleActionClient('/reaching_goal', assignment_2_2022.msg.PlanningAction)
@@ -72,8 +108,15 @@ def robot_client():
       		
 
 def main():
+	
+	"""
+	This function initializes the ROS node, the publisher and the subscriber, and calls the client function.
+	
+	"""
+
+
 	# Initialize a rospy node so that the SimpleActionClient can
-        # publish and subscribe over ROS
+    # publish and subscribe over ROS
 	rospy.init_node('action_client')
 	
 	global pub
