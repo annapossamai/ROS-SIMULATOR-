@@ -1,5 +1,22 @@
 #! /usr/bin/env python
 
+"""
+.. module:: service_node_B
+	:platform: Unix
+	:synopsis: Python module for the service node B.
+    
+.. moduleauthor:: Anna Possamai
+
+This node implements a *service node* that, when it is called, prints the number of goals reached and cancelled;
+
+Service:
+	/goal_n
+    
+Subscriber:	
+	/reaching_goal/result
+
+"""
+
 # import ros stuff
 import rospy
 import assignment_2_2022.msg
@@ -9,15 +26,22 @@ import actionlib.msg
 
 
 
-
-
 #Initialization of the goal variables
 goal_reached=0;
 goal_cancelled=0;
 
 
-
 def goal_rensponse(req):
+	"""
+	This function is called when the service is called and returns the number of reached and cancelled goals.
+
+	Args:
+		req(GoalRequest): the request of the service
+
+	Returns:
+		GoalResponse: the response of the service
+
+	"""
 	
 	global goal_cancelled, goal_reached
 	
@@ -27,7 +51,15 @@ def goal_rensponse(req):
 	
 
 def goal_number(msg):
-	
+	"""
+	This callback function subscribes to the '/reaching_goal/result' topic and updates the number of reached and cancelled goals.
+
+	Args:
+		msg(): the result of the action
+
+	"""
+
+
 	global goal_cancelled, goal_reached
 	
 	# Get the goal status from the msg	
@@ -44,6 +76,10 @@ def goal_number(msg):
 
 
 def main():
+	"""
+	This function initializes the node, subscribes to the '/reaching_goal/result' topic and provides the service '/goal_n'.
+
+	"""
 	
 	# Initialize the node
 	rospy.init_node('service')
@@ -58,13 +94,4 @@ def main():
 	rospy.spin()
 
 if __name__=="__main__":
-	main()		
-		
-
-	
-
-
-
-
-	
-	
+	main()
