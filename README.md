@@ -2,7 +2,10 @@
 
 > Professor Carmine Recchiuto, <p> Student: Anna Possamai
 
-
+Last uploads:
+- node A has been rewritten in Jupyter
+- URL to view the documentation: https://annapossamai.github.io/ROS-SIMULATOR-/
+- Statistical Analysis of Execution Times for Two Robot Programs.
 
 ## INSTALL AND RUN
 
